@@ -1,8 +1,10 @@
+<div align="center">
+
+![Catan Dice Tracker Banner](/images/hero-banner.png)
+
 # 🎲 Catan Dice Tracker
 
-> A premium, offline-first PWA for tracking Catan dice rolls, player turns, and probability statistics in real time.
-
-<div align="center">
+> A premium, offline-first Progressive Web App (PWA) for tracking Catan dice rolls, player turns, and probability statistics in real time.
 
 ![PWA](https://img.shields.io/badge/PWA-Offline--First-F39A2D?style=for-the-badge&logo=pwa&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=111)
@@ -17,162 +19,92 @@ Built for the table, designed for the phone, completely local.
 
 ---
 
-## ✨ What is Catan Dice Tracker?
+## ✨ The Problem It Solves
 
-Catan Dice Tracker turns every dice roll into useful game data without slowing the game down.
+During almost every game of Catan, someone eventually says:
 
-It is designed around one principle:
-
-> **One tap should be enough to record a roll. Everything else should feel effortless.**
-
-The app is an installable **Progressive Web App**, works offline after installation, stores games locally with IndexedDB, supports a dedicated **StandBy / Table Mode**, and compares real-world results against the theoretical probability of two six-sided dice.
-
-### No account. No server. No cloud database.
-
-Your game data stays on the device.
-
----
-
-## 🎯 The problem it solves
-
-During almost every Catan game someone eventually says:
-
-> “There is no way we have rolled this many 7s.”
+> “There is *no way* we've rolled this many 7s.”
 
 Or:
 
-> “Why is nobody rolling 6 or 8?”
+> “Why is nobody rolling a 6 or an 8?”
 
-Catan Dice Tracker gives the table an immediate answer.
+**Catan Dice Tracker** gives the table an immediate, mathematical answer. Every single roll is logged, attributed to the current player, and instantly reflected across the live distribution charts, game timeline, and probability analysis. 
 
-Every roll is logged, attributed to the current player, and reflected instantly across the tracker, live distribution, timeline, and probability analysis.
+### Zero Friction. Zero Cloud.
+It is designed around one core principle: **one tap should be enough to record a roll.** Everything else should feel effortless. Your game data stays entirely on your device using IndexedDB. No accounts, no servers, and absolutely no cloud dependencies. 
 
 ---
 
-## 🚀 Features
+## 🚀 Features at a Glance
 
-| Area | Included |
+| Feature | What it does |
 |---|---|
-| 🎲 Dice tracking | One-tap rolls from 2–12 |
-| 👥 Players | 2–6 players with automatic turn rotation |
-| ⏱️ Game tracking | Roll count + live game timer |
-| ↩️ Corrections | Undo the latest roll |
-| 🔄 Reset | Restart rolls while preserving player setup |
-| 🖥️ StandBy | Landscape table mode with live chart |
-| 📊 Statistics | Overview, distribution, timeline, heat map |
-| 📈 Probability | Actual vs theoretical two-dice distribution |
-| 🗂️ History | Keep and export previous games |
-| 💾 Storage | IndexedDB + localStorage |
-| 📱 PWA | Installable on iOS, Android, and desktop |
-| 📴 Offline | Core experience works without internet |
-| 🔒 Privacy | No login, backend, or cloud dependency |
-| 🔋 Table-ready | Screen Wake Lock support |
-| 📳 Haptics | Vibration feedback where supported |
-| 🍊 Visual language | Dark glass UI + Catan-inspired orange accent |
+| 🎲 **Effortless Tracking** | One-tap rolls (2–12) with automatic player rotation for 2–6 players. |
+| ⏱️ **Game Metrics** | Tracks total roll counts and features a live game timer. |
+| 🔄 **Corrections** | Easily undo the last roll or reset the board while keeping your player setup. |
+| 🖥️ **StandBy Mode** | A dedicated, always-on landscape view for the center of the table. |
+| 📊 **Deep Statistics** | Swipe through an overview, actual vs. expected distribution, timeline, and heat map. |
+| 🗂️ **Game History** | Keep, review, and export previous gaming sessions to JSON. |
+| 📴 **Offline-First** | Core app runs perfectly without an internet connection. |
+| 🔋 **Table-Ready** | Screen Wake Lock support keeps your phone from going to sleep mid-turn. |
+| 🍊 **Aesthetic UI** | A dark glassmorphism interface with Catan-inspired orange accents. |
 
 ---
 
-## 📊 Catan probability engine
+## 🧭 The App Experience
 
-The app uses the exact distribution of two standard six-sided dice:
+### The Tracker
+Optimized for rapid, mid-game use. We use large touch targets, Catan-style probability pips, and animated haptic feedback so you can log rolls without losing focus on the board. 
+
+![Tracker View Screenshot](/images/tracker-view.png)
+
+### StandBy / Table Mode
+A dedicated landscape layout meant to sit on the physical game table. The navigation bar disappears, wake lock activates, and the entire table gets a live look at the dice distribution.
+
+![Standby Mode Screenshot](/images/standby-mode.png)
+
+### Analytical Views
+Swipe through four distinct statistical breakdowns:
+* **Overview:** Totals, averages, and the frequency of the dreaded 7.
+* **Distribution:** Actual table rolls versus the mathematical expected probability.
+* **Timeline:** Chronological feed of the newest rolls with player tags and timestamps.
+* **Heat Map:** Visual breakdown of hot, warm, expected, cool, and cold numbers.
+
+![Statistics View Screenshot](/images/stats-view.png)
+
+---
+
+## 📊 The Probability Engine
+
+The app doesn't just count numbers; it compares your real-world luck against the exact theoretical distribution of two standard six-sided dice.
 
 | Roll | Probability | Pips |
 |---:|---:|:---:|
-| 2 | 2.78% | ● |
-| 3 | 5.56% | ●● |
-| 4 | 8.33% | ●●● |
-| 5 | 11.11% | ●●●● |
-| 6 | 13.89% | ●●●●● |
+| 2 or 12 | 2.78% | ● |
+| 3 or 11 | 5.56% | ●● |
+| 4 or 10 | 8.33% | ●●● |
+| 5 or 9 | 11.11% | ●●●● |
+| 6 or 8 | 13.89% | ●●●●● |
 | **7** | **16.67%** | **●●●●●●** |
-| 8 | 13.89% | ●●●●● |
-| 9 | 11.11% | ●●●● |
-| 10 | 8.33% | ●●● |
-| 11 | 5.56% | ●● |
-| 12 | 2.78% | ● |
 
-Expected counts are calculated as:
-
-```ts
-expectedCount = totalRolls * CATAN_PROBABILITIES[value];
-```
-
-This powers the actual-vs-expected chart and the heat map.
+The app dynamically calculates expected counts (`expectedCount = totalRolls * CATAN_PROBABILITIES[value]`) to power the live distribution charts.
 
 ---
 
-## 🧭 App experience
+## 🏗️ Architecture & Tech Stack
 
-### Tracker
+Catan Dice Tracker is built with a modern, local-first stack designed for speed and reliability.
 
-The primary screen is optimized for rapid table use.
+| Layer | Technology |
+|---|---|
+| **Core** | React 18, TypeScript 5.6 (strict), Vite 5 |
+| **Styling & UI** | Tailwind CSS v4, shadcn/ui, Radix, Framer Motion 11 |
+| **Data Visualization**| Recharts 2 |
+| **Storage & State** | idb 8 (IndexedDB), localStorage |
+| **PWA & Offline** | vite-plugin-pwa, Workbox |
 
-- Large touch targets
-- Catan-style probability pips
-- 7 highlighted as the signature value
-- 6 and 8 visually emphasized as high-probability values
-- Animated last-roll feedback
-- Automatic player rotation
-- Undo / reset
-- StandBy entry
-
-Dice are arranged as:
-
-```text
-2   3   4
-5   6   7   8
-9  10  11  12
-```
-
-### StandBy / Table Mode
-
-A dedicated landscape layout for the physical game table.
-
-```text
-┌───────────────────────────────┬─────────────────────────────┐
-│                               │                             │
-│       DICE NUMPAD             │      LIVE DISTRIBUTION      │
-│                               │          2 ─────            │
-│       2  3  4                 │          3 ───────          │
-│     5  6  7  8               │          ...                │
-│    9 10 11 12                │          7 ─────────────     │
-│                               │                             │
-└───────────────────────────────┴─────────────────────────────┘
-```
-
-The navigation bar disappears and wake lock is requested automatically while StandBy is active.
-
-### Statistics
-
-Four swipeable analytical views:
-
-1. **Overview** — totals, average, common/rare values, 7 frequency
-2. **Distribution** — actual vs expected
-3. **Timeline** — newest rolls first with player and timestamp
-4. **Heat Map** — hot, warm, expected, cool, cold
-
-### Games
-
-Game history keeps finished sessions around for later review or export.
-
-- New game
-- Active badge
-- JSON export
-- Delete game + associated rolls
-- Newest-first ordering
-
-### Settings
-
-- StandBy Mode
-- Keep Screen Awake
-- Current game information
-- Reset rolls
-- Clear all local data
-- App version
-- Online/offline state
-
----
-
-## 🏗️ Architecture
+### Data Flow
 
 ```mermaid
 flowchart TB
@@ -196,339 +128,49 @@ flowchart TB
     WakeLock --> Browser[Wake Lock API]
 ```
 
-### Data model
+## 🛠️ Getting Started (Development)
 
-```ts
-interface Game {
-  id: string;
-  name: string;
-  playerCount: number;
-  players: string[];
-  createdAt: number;
-  updatedAt: number;
-  endedAt?: number;
-  isActive: boolean;
-}
+Want to run it locally or contribute? It's incredibly straightforward. 
 
-interface Roll {
-  id: string;
-  gameId: string;
-  value: number;
-  timestamp: number;
-  playerIndex?: number;
-}
-```
-
-Turn assignment is deterministic:
-
-```ts
-playerIndex = rolls.length % playerCount;
-```
-
----
-
-## 🛠️ Tech stack
-
-| Layer | Technology |
-|---|---|
-| Framework | React 18 |
-| Language | TypeScript 5.6 (strict) |
-| Build | Vite 5 |
-| Routing | wouter 3 |
-| Styling | Tailwind CSS v4 |
-| UI primitives | shadcn/ui + Radix |
-| Charts | Recharts 2 |
-| Carousel | Embla Carousel |
-| Drawer | Vaul |
-| Animation | Framer Motion 11 |
-| Icons | Lucide React |
-| Dates | date-fns 3 |
-| Storage | idb 8 + IndexedDB |
-| PWA | vite-plugin-pwa + Workbox |
-
----
-
-## 📂 Recommended repository structure
-
-```text
-catan-dice-tracker/
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   └── feature_request.md
-│   ├── workflows/
-│   │   └── ci.yml
-│   └── pull_request_template.md
-├── public/
-│   └── icons/
-├── src/
-│   ├── components/
-│   ├── hooks/
-│   ├── lib/
-│   ├── pages/
-│   ├── styles/
-│   ├── App.tsx
-│   └── main.tsx
-├── docs/
-├── README.md
-├── SPEC.md
-├── CONTRIBUTING.md
-├── SECURITY.md
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── ...
-```
-
----
-
-## 💾 Offline-first architecture
-
-### IndexedDB
-
-Database:
-
-```text
-catan-dice-tracker
-```
-
-Version: `1`
-
-Object stores:
-
-- `games`
-- `rolls`
-
-Indexes:
-
-- `games.createdAt`
-- `rolls.gameId`
-- `rolls.timestamp`
-
-### localStorage
-
-Settings are persisted under:
-
-```text
-catan-settings
-```
-
-```ts
-interface Settings {
-  tableMode: boolean;
-  wakeLock: boolean;
-}
-```
-
-### Privacy model
-
-Core functionality requires none of the following:
-
-- Authentication
-- Backend API
-- Database server
-- User account
-- Cloud game state
-
----
-
-## 📱 PWA behavior
-
-### Install gate
-
-The application is designed to run as an installed standalone PWA.
-
-Supported detection mechanisms include:
-
-- `display-mode: standalone`
-- iOS `navigator.standalone`
-- Android app referrer detection
-
-Platform-specific install guidance can be shown for:
-
-- iOS Safari
-- Android Chrome
-- Other install-capable browsers
-
-### Manifest
-
-```json
-{
-  "name": "Catan Dice Tracker",
-  "short_name": "Catan Dice",
-  "description": "Premium Catan dice roll tracker",
-  "display": "standalone",
-  "orientation": "any",
-  "theme_color": "#0a0a0f",
-  "background_color": "#0a0a0f",
-  "start_url": "/",
-  "scope": "/"
-}
-```
-
-### Service worker
-
-Workbox is configured for an offline-first application shell with automatic updates.
-
-Google Fonts, when used, can be cached with a long-lived CacheFirst runtime strategy.
-
----
-
-## 🎨 Design system
-
-The visual language is deliberately dark, tactile, and table-friendly.
-
-### Core tokens
-
-```css
---background: hsl(240 10% 4%);
---foreground: #ffffff;
---primary: hsl(32 95% 60%);
---radius: 1.25rem;
-```
-
-### Principles
-
-- Dark-only interface
-- Warm Catan-orange accent
-- Glassmorphism panels
-- Large touch targets
-- Safe-area support
-- `100dvh` layouts
-- Minimal chrome
-- Motion with purpose
-- Mobile-first by default
-
----
-
-## 🚀 Development
-
-### Requirements
-
-- Node.js 20+
-- npm
-
-### Install
+**Requirements:** Node.js 20+ and npm.
 
 ```bash
+# Clone and install dependencies
 npm install
-```
 
-### Development server
-
-```bash
+# Start the development server (Defaults to http://localhost:5173)
 npm run dev
-```
 
-Default address:
+# Run type checking
+npm run typecheck
 
-```text
-http://localhost:5173
-```
-
-### Production build
-
-```bash
+# Build for production
 npm run build
 ```
 
-### Preview
+---
 
-```bash
-npm run serve
-```
+## 🗺️ Roadmap & Limitations
 
-### Type checking
+We are continually improving the tracker while staying true to our local-first philosophy.
 
-```bash
-npm run typecheck
-```
+**Coming Soon:**
+* Resume or switch to a previously paused game
+* CSV export UI (JSON is currently supported)
+* End-game flow and session summaries
+* Optional local backups and multi-device sync
+
+**Current Limitations:**
+* Light theme is not supported (dark mode only to save battery at the table).
+* Robber and Development Card tracking are currently out of scope to keep the UI uncluttered.
 
 ---
 
-## ⚙️ Environment variables
+## 🤝 Contributing & Privacy
 
-| Variable | Default | Purpose |
-|---|---|---|
-| `PORT` | `5173` | Dev/preview port |
-| `BASE_PATH` | `/` | Deployment base path |
+Got an idea to make game night even better? Bug reports, feature ideas, and UI tweaks are always welcome. Check out [`CONTRIBUTING.md`](CONTRIBUTING.md) for our pull-request workflow.
 
----
-
-## ✅ Quality gates
-
-The recommended local release flow is:
-
-```text
-npm run typecheck
-        ↓
-npm run build
-        ↓
-Install/test the PWA
-        ↓
-Deploy
-```
-
-The repository includes a GitHub Actions workflow that runs type checking and a production build for pushes and pull requests.
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Resume/switch a previous game
-- [ ] CSV export UI
-- [ ] Optional game-ending flow
-- [ ] Richer probability analytics
-- [ ] Session summaries
-- [ ] Import/share game exports
-- [ ] Optional local backup
-- [ ] Optional multi-device sync
-- [ ] Robber tracking
-- [ ] Development card tracking
-
-The core product will remain local-first even as optional features evolve.
-
----
-
-## ⚠️ Current limitations
-
-| Feature | Status |
-|---|---|
-| `endGame()` | Implemented in logic, not exposed |
-| CSV export | Logic exists, JSON is the public export |
-| Switch old game to active | Not supported |
-| Multi-device sync | Not supported |
-| Light theme | Not supported |
-| Robber tracking | Out of scope |
-| Development card tracking | Out of scope |
-
----
-
-## 🤝 Contributing
-
-Contributions, bug reports, ideas, and UI improvements are welcome.
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the development and pull-request workflow.
-
----
-
-## 🔒 Security & privacy
-
-See [`SECURITY.md`](SECURITY.md).
-
-The product intentionally minimizes data movement by keeping core game state on-device.
-
----
-
-## 📄 Specification
-
-The full functional and technical specification is maintained in [`SPEC.md`](SPEC.md).
-
----
-
-## 📜 License
-
-Add the project's chosen license file before publishing the repository publicly.
+**A note on Privacy:** See [`SECURITY.md`](SECURITY.md). We intentionally minimize data movement. Everything you track stays on your device. Period. 
 
 ---
 
