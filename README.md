@@ -57,12 +57,12 @@ It is designed around one core principle: **one tap should be enough to record a
 ### The Tracker
 Optimized for rapid, mid-game use. We use large touch targets, Catan-style probability pips, and animated haptic feedback so you can log rolls without losing focus on the board. 
 
-![Tracker View Screenshot](/images/tracker-view.png)
+<img src="/images/tracker-view.png" alt="Tracker View" width="50%" />
 
 ### StandBy / Table Mode
 A dedicated landscape layout meant to sit on the physical game table. The navigation bar disappears, wake lock activates, and the entire table gets a live look at the dice distribution.
 
-![Standby Mode Screenshot](/images/standby-mode.png)
+<img src="/images/standby-view.png" alt="StandBy Mode" width="50%" />
 
 ### Analytical Views
 Swipe through four distinct statistical breakdowns:
@@ -71,7 +71,7 @@ Swipe through four distinct statistical breakdowns:
 * **Timeline:** Chronological feed of the newest rolls with player tags and timestamps.
 * **Heat Map:** Visual breakdown of hot, warm, expected, cool, and cold numbers.
 
-![Statistics View Screenshot](/images/stats-view.png)
+<img src="/images/stats-view.png" alt="Stats View" width="50%" />
 
 ---
 
