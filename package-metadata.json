@@ -1,0 +1,13 @@
+{
+  "name": "catan-dice-tracker",
+  "displayName": "Catan Dice Tracker",
+  "shortName": "Catan Dice",
+  "version": "1.0.0",
+  "description": "A premium offline-first PWA for tracking Catan dice rolls and probability statistics.",
+  "platform": "PWA",
+  "theme": "dark",
+  "primaryAccent": "hsl(32 95% 60%)",
+  "storage": ["IndexedDB", "localStorage"],
+  "requiresAuth": false,
+  "requiresBackend": false
+}
